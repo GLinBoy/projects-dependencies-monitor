@@ -19,6 +19,8 @@ repositories {
 	mavenCentral()
 }
 
+val springDocVersion = "2.2.0"
+
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-actuator")
 	implementation("org.springframework.boot:spring-boot-starter-jooq")
@@ -26,7 +28,7 @@ dependencies {
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.flywaydb:flyway-core")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
-	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0")
+	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:${springDocVersion}")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 	runtimeOnly("com.h2database:h2")
 	runtimeOnly("org.postgresql:postgresql")
