@@ -1,4 +1,6 @@
 package com.glinboy.dependencymonitor.repository.impl
 
-class ProjectRepositoryImpl {
+import com.glinboy.dependencymonitor.repository.ProjectRepository
+
+class ProjectRepositoryImpl : ProjectRepository {
 }
