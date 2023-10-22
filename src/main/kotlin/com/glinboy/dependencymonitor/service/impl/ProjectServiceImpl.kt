@@ -1,4 +1,6 @@
 package com.glinboy.dependencymonitor.service.impl
 
-class ProjectServiceImpl {
+import com.glinboy.dependencymonitor.service.ProjectService
+
+class ProjectServiceImpl : ProjectService {
 }
