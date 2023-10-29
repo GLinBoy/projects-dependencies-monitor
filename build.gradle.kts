@@ -1,7 +1,9 @@
 import nu.studer.gradle.jooq.JooqEdition
 import nu.studer.gradle.jooq.JooqGenerate
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.jooq.meta.jaxb.ForcedType
 import org.jooq.meta.jaxb.Logging
+import java.time.Instant
 
 plugins {
 	id("org.springframework.boot") version "3.1.5"
@@ -91,6 +93,20 @@ jooq {
 						isIncludePrimaryKeys = true
 						isIncludeUniqueKeys = true
 						isIncludeForeignKeys = true
+						forcedTypes = listOf(
+							ForcedType().apply {
+								userType = Instant::class.java.name
+								includeTypes = "TIMESTAMP\\ WITH\\ TIME\\ ZONE"
+								converter = """
+                                    org.jooq.Converter.ofNullable(
+                                        java.time.OffsetDateTime.class,
+                                        java.time.Instant.class,
+                                        java.time.OffsetDateTime::toInstant,
+                                        instant ->
+                                            java.time.OffsetDateTime.ofInstant(instant, java.time.ZoneOffset.UTC))
+                                    """.trimIndent()
+							}
+						)
 					}
 
 					target.apply {
