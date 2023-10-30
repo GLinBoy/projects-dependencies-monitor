@@ -1,9 +1,10 @@
 CREATE TABLE project
 (
-	id         bigserial primary key,
-	title      varchar(128),
+	id BIGINT PRIMARY KEY,
+	title      VARCHAR(128),
 -- 	created_by bigint        not null REFERENCES users (id),
 -- 	updated_by bigint        not null REFERENCES users (id),
-	created_at timestamp with time zone default CURRENT_TIMESTAMP,
-	updated_at timestamp with time zone
+	created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+	updated_at TIMESTAMP WITH TIME ZONE
+);
 );
