@@ -59,7 +59,7 @@ tasks.withType<Test> {
 
 flyway {
 	configurations = arrayOf("flywayMigration")
-	url = "jdbc:h2:~/test;AUTO_SERVER=TRUE"
+	url = "jdbc:h2:${project.layout.buildDirectory.get().asFile.absolutePath}/dm;AUTO_SERVER=TRUE;MODE=PostgreSQL;"
 	user = "sa"
 	password = ""
 }
@@ -120,7 +120,7 @@ jooq {
 
 tasks.named<JooqGenerate>("generateJooq").configure {
 	dependsOn(tasks.named("flywayMigrate"))
-	inputs.files(fileTree("src/main/resources/db/migration"))
+	inputs.files(fileTree("${sourceSets.main.get().output.resourcesDir.toString()}/db/migration"))
 		.withPropertyName("migrations")
 		.withPathSensitivity(PathSensitivity.RELATIVE)
 	allInputsDeclared.set(true)
