@@ -1,4 +1,8 @@
 package com.glinboy.dependencymonitor.service.impl
 
-class VersionServiceImpl {
+import com.glinboy.dependencymonitor.service.VersionService
+import org.springframework.stereotype.Service
+
+@Service
+class VersionServiceImpl: VersionService {
 }
