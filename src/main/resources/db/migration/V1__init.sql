@@ -30,7 +30,7 @@ CREATE TABLE versions
 	FOREIGN KEY (dependency_id) REFERENCES dependency (id)
 );
 
-CREATE TABLE ProjectDependency
+CREATE TABLE project_dependency
 (
 	project_id BIGINT,
 	version_id BIGINT,
