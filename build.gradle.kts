@@ -120,7 +120,7 @@ jooq {
 
 tasks.named<JooqGenerate>("generateJooq").configure {
 	dependsOn(tasks.named("flywayMigrate"))
-	inputs.files(fileTree("${sourceSets.main.get().output.resourcesDir.toString()}/db/migration"))
+	inputs.files(fileTree("src/main/db/migration"))
 		.withPropertyName("migrations")
 		.withPathSensitivity(PathSensitivity.RELATIVE)
 	allInputsDeclared.set(true)
