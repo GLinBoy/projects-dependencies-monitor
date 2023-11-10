@@ -18,6 +18,8 @@ plugins {
 group = "com.glinboy"
 version = "0.0.1-SNAPSHOT"
 
+defaultTasks("bootRun")
+
 java {
 	sourceCompatibility = JavaVersion.VERSION_17
 }
