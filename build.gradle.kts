@@ -127,3 +127,15 @@ tasks.named<JooqGenerate>("generateJooq").configure {
 		.withPathSensitivity(PathSensitivity.RELATIVE)
 	allInputsDeclared.set(true)
 }
+
+tasks.bootRun {
+	jvmArgs = listOf(
+		"-XX:+UseZGC",
+		"-Xlog:gc*:file=logs/dm.gc.log",
+		"-XX:+HeapDumpOnOutOfMemoryError",
+		"-XX:HeapDumpPath=log/crashes/dm.hprof",
+		"-Xss256k",
+		"-Dsun.net.client.defaultConnectTimeout=2000",
+		"-Dsun.net.client.defaultReadTimeout=2000"
+	)
+}
