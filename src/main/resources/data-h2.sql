@@ -1,9 +1,9 @@
-insert into project (id, title, created_at, updated_at)
-values (101, 'Flowers of War, The (Jin líng shí san chai)', '2023-10-02 22:44:11', '2023-08-24 18:08:48'),
-			 (102, 'Oyster Farmer', '2023-04-30 22:18:50', '2023-01-04 06:19:29'),
-			 (103, 'Dust of Time, The', '2023-03-01 00:30:42', '2023-01-31 03:36:31'),
-			 (104, 'Shadow People', '2023-10-18 01:23:03', '2023-02-12 14:22:59'),
-			 (105, 'Absolute Aggression', '2023-06-26 07:10:08', '2023-03-23 11:14:09');
+insert into project (title, created_at, updated_at)
+values ('Flowers of War, The (Jin líng shí san chai)', '2023-10-02 22:44:11', '2023-08-24 18:08:48'),
+			 ('Oyster Farmer', '2023-04-30 22:18:50', '2023-01-04 06:19:29'),
+			 ('Dust of Time, The', '2023-03-01 00:30:42', '2023-01-31 03:36:31'),
+			 ('Shadow People', '2023-10-18 01:23:03', '2023-02-12 14:22:59'),
+			 ('Absolute Aggression', '2023-06-26 07:10:08', '2023-03-23 11:14:09');
 
 insert into dependency (id, title, created_at, updated_at)
 values (201, 'Eden Lake', '2023-10-29 05:59:58', '2023-09-06 17:12:01'),
