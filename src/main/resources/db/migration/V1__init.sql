@@ -10,7 +10,7 @@ CREATE TABLE project
 
 CREATE TABLE dependency
 (
-	id         BIGINT PRIMARY KEY,
+	id         BIGINT generated always as identity PRIMARY KEY,
 	title      VARCHAR(128),
 -- 	created_by bigint        not null REFERENCES users (id),
 -- 	updated_by bigint        not null REFERENCES users (id),
