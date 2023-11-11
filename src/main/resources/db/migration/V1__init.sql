@@ -20,7 +20,7 @@ CREATE TABLE dependency
 
 CREATE TABLE versions
 (
-	id            BIGINT PRIMARY KEY,
+	id            BIGINT generated always as identity PRIMARY KEY,
 	version_number VARCHAR(64),
 -- 	created_by bigint        not null REFERENCES users (id),
 -- 	updated_by bigint        not null REFERENCES users (id),
