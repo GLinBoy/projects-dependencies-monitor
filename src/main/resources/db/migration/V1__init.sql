@@ -14,8 +14,8 @@ CREATE TABLE dependency
 	title      VARCHAR(128),
 -- 	created_by bigint        not null REFERENCES users (id),
 -- 	updated_by bigint        not null REFERENCES users (id),
-	created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
-	updated_at TIMESTAMP WITH TIME ZONE
+	created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE versions
