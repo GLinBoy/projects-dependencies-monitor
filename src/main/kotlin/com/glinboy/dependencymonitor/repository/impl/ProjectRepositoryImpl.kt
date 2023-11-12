@@ -32,4 +32,9 @@ class ProjectRepositoryImpl(private val dsl: DSLContext) : ProjectRepository {
 		}
 			.orElseGet { null }
 
+	override fun saveProject(projectDTO: ProjectDTO): ProjectDTO? =
+		dsl.insertInto(Tables.PROJECT, Tables.PROJECT.TITLE)
+			.values(projectDTO.title)
+			.returning()
+			.fetchOneInto(ProjectDTO::class.java)
 }
