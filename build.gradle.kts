@@ -99,6 +99,7 @@ jooq {
 							ForcedType().apply {
 								userType = Instant::class.java.name
 								includeTypes = "TIMESTAMP"
+								converter = "com.glinboy.dependencymonitor.util.converter.LocalDateTimeToInstantConverter"
 							}
 						)
 					}
