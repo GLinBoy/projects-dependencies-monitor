@@ -10,4 +10,6 @@ class ProjectServiceImpl(val repository: ProjectRepository) : ProjectService {
 	override fun getProjects(): List<ProjectDTO> = repository.getProjects()
 
 	override fun getProjectById(id: Long) = repository.getProjectById(id)
+
+	override fun saveProject(projectDTO: ProjectDTO): ProjectDTO? = repository.saveProject(projectDTO)
 }
