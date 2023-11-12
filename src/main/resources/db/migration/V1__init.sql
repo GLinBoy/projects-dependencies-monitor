@@ -25,8 +25,8 @@ CREATE TABLE versions
 -- 	created_by bigint        not null REFERENCES users (id),
 -- 	updated_by bigint        not null REFERENCES users (id),
 	dependency_id BIGINT,
-	created_at    TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
-	updated_at     TIMESTAMP WITH TIME ZONE,
+	created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	FOREIGN KEY (dependency_id) REFERENCES dependency (id)
 );
 
