@@ -7,4 +7,5 @@ interface ProjectRepository {
 	fun getProjectById(id: Long): ProjectDTO?
 	fun saveProject(projectDTO: ProjectDTO): ProjectDTO?
 	fun updateProject(projectDTO: ProjectDTO): ProjectDTO?
+	fun deleteProject(id: Long): Int
 }
