@@ -2,6 +2,7 @@ package com.glinboy.dependencymonitor.web.rest
 
 import com.glinboy.dependencymonitor.service.ProjectService
 import com.glinboy.dependencymonitor.service.dto.ProjectDTO
+import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
@@ -26,4 +27,7 @@ class ProjectResource(private val service: ProjectService) {
 
 	@PutMapping
 	fun updateProject(projectDTO: ProjectDTO) = service.updateProject(projectDTO)
+
+	@DeleteMapping("/{id}")
+	fun deleteProject(@PathVariable id: Long) = service.deleteProject(id)
 }
