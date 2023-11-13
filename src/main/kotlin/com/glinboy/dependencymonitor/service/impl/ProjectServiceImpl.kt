@@ -14,4 +14,8 @@ class ProjectServiceImpl(val repository: ProjectRepository) : ProjectService {
 	override fun saveProject(projectDTO: ProjectDTO): ProjectDTO? = repository.saveProject(projectDTO)
 
 	override fun updateProject(projectDTO: ProjectDTO): ProjectDTO? = repository.updateProject(projectDTO)
+
+	override fun deleteProject(id: Long) {
+		repository.deleteProject(id)
+	}
 }
