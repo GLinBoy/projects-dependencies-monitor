@@ -5,6 +5,7 @@ import com.glinboy.dependencymonitor.service.dto.ProjectDTO
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
+import org.springframework.web.bind.annotation.PutMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
@@ -22,4 +23,7 @@ class ProjectResource(private val service: ProjectService) {
 
 	@PostMapping
 	fun saveProject(projectDTO: ProjectDTO) = service.saveProject(projectDTO)
+
+	@PutMapping
+	fun updateProject(projectDTO: ProjectDTO) = service.updateProject(projectDTO)
 }
