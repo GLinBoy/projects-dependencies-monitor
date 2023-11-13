@@ -45,4 +45,8 @@ class ProjectRepositoryImpl(private val dsl: DSLContext) : ProjectRepository {
 			.set(Tables.PROJECT.UPDATED_AT, Instant.now())
 			.where(Tables.PROJECT.ID.eq(projectDTO.id))
 			.returning().fetchOneInto(ProjectDTO::class.java)
+
+	override fun deleteProject(id: Long) = dsl.delete(Tables.PROJECT)
+		.where(Tables.PROJECT.ID.eq(id))
+		.execute()
 }
