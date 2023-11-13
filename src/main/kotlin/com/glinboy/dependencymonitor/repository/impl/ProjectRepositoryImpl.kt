@@ -6,6 +6,7 @@ import com.glinboy.dependencymonitor.service.dto.ProjectDTO
 import org.jooq.DSLContext
 import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Repository
+import java.time.Instant
 
 @Repository
 class ProjectRepositoryImpl(private val dsl: DSLContext) : ProjectRepository {
@@ -37,4 +38,11 @@ class ProjectRepositoryImpl(private val dsl: DSLContext) : ProjectRepository {
 			.values(projectDTO.title)
 			.returning()
 			.fetchOneInto(ProjectDTO::class.java)
+
+	override fun updateProject(projectDTO: ProjectDTO): ProjectDTO? =
+		dsl.update(Tables.PROJECT)
+			.set(Tables.PROJECT.TITLE, projectDTO.title)
+			.set(Tables.PROJECT.UPDATED_AT, Instant.now())
+			.where(Tables.PROJECT.ID.eq(projectDTO.id))
+			.returning().fetchOneInto(ProjectDTO::class.java)
 }
