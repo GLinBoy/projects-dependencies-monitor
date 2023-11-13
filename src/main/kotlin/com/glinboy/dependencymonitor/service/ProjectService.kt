@@ -6,4 +6,5 @@ interface ProjectService {
 	fun getProjects(): List<ProjectDTO>
 	fun getProjectById(id: Long): ProjectDTO?
 	fun saveProject(projectDTO: ProjectDTO): ProjectDTO?
+	fun updateProject(projectDTO: ProjectDTO): ProjectDTO?
 }
