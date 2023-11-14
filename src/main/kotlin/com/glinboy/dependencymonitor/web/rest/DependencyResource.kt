@@ -13,4 +13,7 @@ class DependencyResource(private val service: DependencyService) {
 
 	@GetMapping("/{id}")
 	fun getDependencyById(@PathVariable id: Long): DependencyDTO? = service.getDependencyById(id)
+
+	@PostMapping
+	fun saveDependency(dependencyDTO: DependencyDTO) = service.saveDependency(dependencyDTO)
 }
