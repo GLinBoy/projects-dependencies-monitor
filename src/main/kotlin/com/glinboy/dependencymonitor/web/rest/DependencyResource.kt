@@ -16,4 +16,7 @@ class DependencyResource(private val service: DependencyService) {
 
 	@PostMapping
 	fun saveDependency(dependencyDTO: DependencyDTO) = service.saveDependency(dependencyDTO)
+
+	@PutMapping
+	fun updateDependency(dependencyDTO: DependencyDTO) = service.updateDependency(dependencyDTO)
 }
