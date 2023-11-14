@@ -10,4 +10,7 @@ class DependencyResource(private val service: DependencyService) {
 
 	@GetMapping
 	fun getDependencies() = service.getDependencies()
+
+	@GetMapping("/{id}")
+	fun getDependencyById(@PathVariable id: Long): DependencyDTO? = service.getDependencyById(id)
 }
