@@ -6,4 +6,5 @@ interface DependencyService {
 	fun getDependencies(): List<DependencyDTO>
 	fun getDependencyById(id: Long): DependencyDTO?
 	fun saveDependency(dependencyDTO: DependencyDTO): DependencyDTO?
+	fun updateDependency(dependencyDTO: DependencyDTO): DependencyDTO?
 }
