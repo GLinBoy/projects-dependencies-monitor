@@ -19,4 +19,7 @@ class DependencyResource(private val service: DependencyService) {
 
 	@PutMapping
 	fun updateDependency(dependencyDTO: DependencyDTO) = service.updateDependency(dependencyDTO)
+
+	@DeleteMapping("/{id}")
+	fun deleteDependency(@PathVariable id: Long) = service.deleteDependency(id)
 }
