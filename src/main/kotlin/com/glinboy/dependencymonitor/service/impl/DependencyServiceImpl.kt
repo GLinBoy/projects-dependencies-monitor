@@ -8,4 +8,6 @@ import org.springframework.stereotype.Service
 @Service
 class DependencyServiceImpl(private val repository: DependencyRepository) : DependencyService {
 	override fun getDependencies(): List<DependencyDTO> = repository.getDependencies()
+
+	override fun getDependencyById(id: Long) = repository.getDependencyById(id)
 }
