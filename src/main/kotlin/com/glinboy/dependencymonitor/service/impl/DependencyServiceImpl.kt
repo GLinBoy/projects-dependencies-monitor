@@ -10,4 +10,6 @@ class DependencyServiceImpl(private val repository: DependencyRepository) : Depe
 	override fun getDependencies(): List<DependencyDTO> = repository.getDependencies()
 
 	override fun getDependencyById(id: Long) = repository.getDependencyById(id)
+
+	override fun saveDependency(dependencyDTO: DependencyDTO): DependencyDTO? = repository.saveDependency(dependencyDTO)
 }
