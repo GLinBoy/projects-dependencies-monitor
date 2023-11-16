@@ -18,4 +18,7 @@ class VersionResource(private val service: VersionService) {
 
 	@PostMapping
 	fun saveVersion(versionDTO: VersionDTO) = service.saveVersion(versionDTO)
+
+	@PutMapping
+	fun updateVersion(versionDTO: VersionDTO) = service.updateVersion(versionDTO)
 }
