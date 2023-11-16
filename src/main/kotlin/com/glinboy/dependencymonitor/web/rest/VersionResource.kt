@@ -15,4 +15,7 @@ class VersionResource(private val service: VersionService) {
 	fun getVersionById(@PathVariable id: Long): VersionDTO? {
 		return service.getVersionById(id)
 	}
+
+	@PostMapping
+	fun saveVersion(versionDTO: VersionDTO) = service.saveVersion(versionDTO)
 }
