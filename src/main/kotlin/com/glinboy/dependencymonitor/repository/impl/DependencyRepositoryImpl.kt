@@ -39,4 +39,11 @@ class DependencyRepositoryImpl(private val dsl: DSLContext) : DependencyReposito
 			.values(dependencyDTO.title)
 			.returning()
 			.fetchOneInto(dependencyDTO::class.java)
+
+	override fun updateDependency(dependencyDTO: DependencyDTO): DependencyDTO? =
+		dsl.update(Tables.DEPENDENCY)
+			.set(Tables.DEPENDENCY.TITLE, dependencyDTO.title)
+			.set(Tables.DEPENDENCY.UPDATED_AT, Instant.now())
+			.where(Tables.DEPENDENCY.ID.eq(dependencyDTO.id))
+			.returning().fetchOneInto(dependencyDTO::class.java)
 }
