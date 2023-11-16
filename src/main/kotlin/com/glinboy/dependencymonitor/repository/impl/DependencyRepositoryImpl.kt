@@ -22,4 +22,15 @@ class DependencyRepositoryImpl(private val dsl: DSLContext) : DependencyReposito
 			)
 		}
 		.toList()
+
+	override fun getDependencyById(id: Long): DependencyDTO? =
+		dsl.selectFrom(Tables.DEPENDENCY).where(Tables.DEPENDENCY.ID.eq(id)).fetchOptional().map {
+			DependencyDTO(
+				it[Tables.DEPENDENCY.ID],
+				it[Tables.DEPENDENCY.TITLE],
+				it[Tables.DEPENDENCY.CREATED_AT],
+				it[Tables.DEPENDENCY.UPDATED_AT]
+			)
+		}
+			.orElseGet { null }
 }
