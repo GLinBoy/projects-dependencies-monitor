@@ -33,4 +33,10 @@ class DependencyRepositoryImpl(private val dsl: DSLContext) : DependencyReposito
 			)
 		}
 			.orElseGet { null }
+
+	override fun saveDependency(dependencyDTO: DependencyDTO): DependencyDTO? =
+		dsl.insertInto(Tables.DEPENDENCY, Tables.DEPENDENCY.TITLE)
+			.values(dependencyDTO.title)
+			.returning()
+			.fetchOneInto(dependencyDTO::class.java)
 }
