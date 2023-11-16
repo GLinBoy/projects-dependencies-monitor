@@ -10,4 +10,9 @@ class VersionResource(private val service: VersionService) {
 
 	@GetMapping
 	fun getVersions() = service.getVersions()
+
+	@GetMapping("/{id}")
+	fun getVersionById(@PathVariable id: Long): VersionDTO? {
+		return service.getVersionById(id)
+	}
 }
