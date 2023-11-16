@@ -46,4 +46,8 @@ class DependencyRepositoryImpl(private val dsl: DSLContext) : DependencyReposito
 			.set(Tables.DEPENDENCY.UPDATED_AT, Instant.now())
 			.where(Tables.DEPENDENCY.ID.eq(dependencyDTO.id))
 			.returning().fetchOneInto(dependencyDTO::class.java)
+
+	override fun deleteDependency(id: Long) = dsl.delete(Tables.DEPENDENCY)
+		.where(Tables.DEPENDENCY.ID.eq(id))
+		.execute()
 }
