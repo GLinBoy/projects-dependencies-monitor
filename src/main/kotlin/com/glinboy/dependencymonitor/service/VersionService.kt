@@ -7,4 +7,5 @@ interface VersionService {
 	fun getVersionById(id: Long): VersionDTO?
 	fun saveVersion(versionDTO: VersionDTO): VersionDTO?
 	fun updateVersion(versionDTO: VersionDTO): VersionDTO?
+	fun deleteVersion(id: Long)
 }
