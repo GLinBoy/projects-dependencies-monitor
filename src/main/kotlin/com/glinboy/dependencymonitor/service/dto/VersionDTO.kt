@@ -5,7 +5,7 @@ import java.time.Instant
 data class VersionDTO(
 	val id: Long?,
 	val versionNumber: String?,
-	val dependencyId: Instant?,
+	val dependencyId: Long?,
 	val createdAt: Instant?,
 	val updatedAt: Instant?
 )
