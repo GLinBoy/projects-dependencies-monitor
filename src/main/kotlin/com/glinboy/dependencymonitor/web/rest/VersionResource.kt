@@ -21,4 +21,7 @@ class VersionResource(private val service: VersionService) {
 
 	@PutMapping
 	fun updateVersion(versionDTO: VersionDTO) = service.updateVersion(versionDTO)
+
+	@DeleteMapping("/{id}")
+	fun deleteVersion(@PathVariable id: Long) = service.deleteVersion(id)
 }
