@@ -22,4 +22,16 @@ class VersionRepositoryImpl(private val dsl: DSLContext): VersionRepository {
 			)
 		}
 		.toList()
+
+	override fun getVersionById(id: Long): VersionDTO? =
+		dsl.selectFrom(Tables.VERSIONS).where(Tables.VERSIONS.ID.eq(id)).fetchOptional().map {
+			VersionDTO(
+				it[Tables.VERSIONS.ID],
+				it[Tables.VERSIONS.VERSION_NUMBER],
+				it[Tables.VERSIONS.DEPENDENCY_ID],
+				it[Tables.VERSIONS.CREATED_AT],
+				it[Tables.VERSIONS.UPDATED_AT]
+			)
+		}
+			.orElseGet { null }
 }
