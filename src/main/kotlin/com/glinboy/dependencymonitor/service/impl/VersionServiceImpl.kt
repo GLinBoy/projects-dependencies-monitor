@@ -12,4 +12,6 @@ class VersionServiceImpl(val repository: VersionRepository) : VersionService {
 	override fun getVersionById(id: Long) = repository.getVersionById(id)
 
 	override fun saveVersion(versionDTO: VersionDTO): VersionDTO? = repository.saveVersion(versionDTO)
+
+	override fun updateVersion(versionDTO: VersionDTO): VersionDTO? = repository.updateVersion(versionDTO)
 }
