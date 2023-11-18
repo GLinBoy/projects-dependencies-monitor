@@ -34,4 +34,11 @@ class VersionRepositoryImpl(private val dsl: DSLContext): VersionRepository {
 			)
 		}
 			.orElseGet { null }
+
+	override fun saveVersion(versionDTO: VersionDTO): VersionDTO? =
+		dsl.insertInto(Tables.VERSIONS)
+			.set(Tables.VERSIONS.VERSION_NUMBER, versionDTO.versionNumber)
+			.set(Tables.VERSIONS.DEPENDENCY_ID, versionDTO.dependencyId)
+			.returning()
+			.fetchOneInto(versionDTO::class.java)
 }
