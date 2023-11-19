@@ -1,6 +1,7 @@
 package com.glinboy.dependencymonitor.web.rest
 
 import com.glinboy.dependencymonitor.service.ProjectService
+import com.glinboy.dependencymonitor.service.dto.DependencyDTO
 import com.glinboy.dependencymonitor.service.dto.ProjectDTO
 import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping
@@ -21,6 +22,9 @@ class ProjectResource(private val service: ProjectService) {
 	fun getProjectById(@PathVariable id: Long): ProjectDTO? {
 		return service.getProjectById(id)
 	}
+
+	@GetMapping("/{id}/dependencies")
+	fun getProjectDependencies(@PathVariable id: Long): List<DependencyDTO>? = service.getProjectDependencies(id)
 
 	@PostMapping
 	fun saveProject(projectDTO: ProjectDTO) = service.saveProject(projectDTO)
