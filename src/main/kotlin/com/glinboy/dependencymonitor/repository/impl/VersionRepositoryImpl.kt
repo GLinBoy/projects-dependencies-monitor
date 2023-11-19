@@ -41,4 +41,11 @@ class VersionRepositoryImpl(private val dsl: DSLContext): VersionRepository {
 			.set(Tables.VERSIONS.DEPENDENCY_ID, versionDTO.dependencyId)
 			.returning()
 			.fetchOneInto(versionDTO::class.java)
+
+	override fun updateVersion(versionDTO: VersionDTO): VersionDTO? =
+		dsl.update(Tables.VERSIONS)
+			.set(Tables.VERSIONS.VERSION_NUMBER, versionDTO.versionNumber)
+			.set(Tables.VERSIONS.UPDATED_AT, Instant.now())
+			.where(Tables.VERSIONS.ID.eq(versionDTO.id))
+			.returning().fetchOneInto(versionDTO::class.java)
 }
