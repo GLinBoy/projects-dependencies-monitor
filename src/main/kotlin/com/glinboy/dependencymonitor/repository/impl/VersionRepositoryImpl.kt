@@ -48,4 +48,8 @@ class VersionRepositoryImpl(private val dsl: DSLContext): VersionRepository {
 			.set(Tables.VERSIONS.UPDATED_AT, Instant.now())
 			.where(Tables.VERSIONS.ID.eq(versionDTO.id))
 			.returning().fetchOneInto(versionDTO::class.java)
+
+	override fun deleteVersion(id: Long) = dsl.delete(Tables.VERSIONS)
+		.where(Tables.VERSIONS.ID.eq(id))
+		.execute()
 }
