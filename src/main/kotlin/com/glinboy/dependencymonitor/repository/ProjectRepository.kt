@@ -1,10 +1,12 @@
 package com.glinboy.dependencymonitor.repository
 
+import com.glinboy.dependencymonitor.service.dto.DependencyDTO
 import com.glinboy.dependencymonitor.service.dto.ProjectDTO
 
 interface ProjectRepository {
 	fun getProjects(): List<ProjectDTO>
 	fun getProjectById(id: Long): ProjectDTO?
+	fun getProjectDependencies(id: Long): List<DependencyDTO>
 	fun saveProject(projectDTO: ProjectDTO): ProjectDTO?
 	fun updateProject(projectDTO: ProjectDTO): ProjectDTO?
 	fun deleteProject(id: Long): Int
