@@ -3,6 +3,7 @@ package com.glinboy.dependencymonitor.service.impl
 import com.glinboy.dependencymonitor.repository.DependencyRepository
 import com.glinboy.dependencymonitor.service.DependencyService
 import com.glinboy.dependencymonitor.service.dto.DependencyDTO
+import com.glinboy.dependencymonitor.service.dto.VersionDTO
 import org.springframework.stereotype.Service
 
 @Service
@@ -19,4 +20,6 @@ class DependencyServiceImpl(private val repository: DependencyRepository) : Depe
 	override fun deleteDependency(id: Long) {
 		repository.deleteDependency(id)
 	}
+
+	override fun getDependencyLatestVersion(id: Long): VersionDTO? = repository.getDependencyLatestVersion(id)
 }
