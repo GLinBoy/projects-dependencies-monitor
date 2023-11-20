@@ -1,8 +1,13 @@
 server:
   error:
     include-stacktrace: never
+
 spring:
   application:
     name: Dependency Monitor
   profiles:
     active: dev
+
+springdoc:
+  swagger-ui:
+    docExpansion: none
