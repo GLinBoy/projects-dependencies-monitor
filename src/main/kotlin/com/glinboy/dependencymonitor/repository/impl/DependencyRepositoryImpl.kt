@@ -3,6 +3,7 @@ package com.glinboy.dependencymonitor.repository.impl
 import com.glinboy.dependencymonitor.entity.Tables
 import com.glinboy.dependencymonitor.repository.DependencyRepository
 import com.glinboy.dependencymonitor.service.dto.DependencyDTO
+import com.glinboy.dependencymonitor.service.dto.VersionDTO
 import org.jooq.DSLContext
 import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Repository
@@ -50,4 +51,13 @@ class DependencyRepositoryImpl(private val dsl: DSLContext) : DependencyReposito
 	override fun deleteDependency(id: Long) = dsl.delete(Tables.DEPENDENCY)
 		.where(Tables.DEPENDENCY.ID.eq(id))
 		.execute()
+
+	override fun getDependencyLatestVersion(id: Long): VersionDTO? = dsl
+		.select()
+		.from(Tables.DEPENDENCY)
+		.leftJoin(Tables.VERSIONS).on(Tables.VERSIONS.DEPENDENCY_ID.eq(Tables.DEPENDENCY.ID))
+		.where(Tables.DEPENDENCY.ID.eq(id))
+		.orderBy(Tables.DEPENDENCY.ID.desc())
+		.limit(1)
+		.fetchOneInto(VersionDTO::class.java)
 }
