@@ -12,6 +12,8 @@ class DependencyServiceImpl(private val repository: DependencyRepository) : Depe
 
 	override fun getDependencyById(id: Long) = repository.getDependencyById(id)
 
+	override fun getProjectDependencies(id: Long): List<DependencyDTO> = repository.getProjectDependencies(id)
+
 	override fun saveDependency(dependencyDTO: DependencyDTO): DependencyDTO? = repository.saveDependency(dependencyDTO)
 
 	override fun updateDependency(dependencyDTO: DependencyDTO): DependencyDTO? =
