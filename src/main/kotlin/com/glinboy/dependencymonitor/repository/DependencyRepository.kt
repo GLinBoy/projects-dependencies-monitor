@@ -10,5 +10,4 @@ interface DependencyRepository {
 	fun saveDependency(dependencyDTO: DependencyDTO): DependencyDTO?
 	fun updateDependency(dependencyDTO: DependencyDTO): DependencyDTO?
 	fun deleteDependency(id: Long): Int
-	fun getDependencyLatestVersion(id: Long): VersionDTO?
 }
