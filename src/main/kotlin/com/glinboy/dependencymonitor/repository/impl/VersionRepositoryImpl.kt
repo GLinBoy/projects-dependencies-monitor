@@ -52,4 +52,13 @@ class VersionRepositoryImpl(private val dsl: DSLContext): VersionRepository {
 	override fun deleteVersion(id: Long) = dsl.delete(Tables.VERSIONS)
 		.where(Tables.VERSIONS.ID.eq(id))
 		.execute()
+
+	override fun getDependencyLatestVersion(id: Long): VersionDTO? = dsl
+		.select()
+		.from(Tables.DEPENDENCY)
+		.leftJoin(Tables.VERSIONS).on(Tables.VERSIONS.DEPENDENCY_ID.eq(Tables.DEPENDENCY.ID))
+		.where(Tables.DEPENDENCY.ID.eq(id))
+		.orderBy(Tables.DEPENDENCY.ID.desc())
+		.limit(1)
+		.fetchOneInto(VersionDTO::class.java)
 }

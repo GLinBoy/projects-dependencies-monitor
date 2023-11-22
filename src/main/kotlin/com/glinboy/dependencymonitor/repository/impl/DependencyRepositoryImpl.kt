@@ -74,13 +74,4 @@ class DependencyRepositoryImpl(private val dsl: DSLContext) : DependencyReposito
 	override fun deleteDependency(id: Long) = dsl.delete(Tables.DEPENDENCY)
 		.where(Tables.DEPENDENCY.ID.eq(id))
 		.execute()
-
-	override fun getDependencyLatestVersion(id: Long): VersionDTO? = dsl
-		.select()
-		.from(Tables.DEPENDENCY)
-		.leftJoin(Tables.VERSIONS).on(Tables.VERSIONS.DEPENDENCY_ID.eq(Tables.DEPENDENCY.ID))
-		.where(Tables.DEPENDENCY.ID.eq(id))
-		.orderBy(Tables.DEPENDENCY.ID.desc())
-		.limit(1)
-		.fetchOneInto(VersionDTO::class.java)
 }
