@@ -22,6 +22,4 @@ class DependencyServiceImpl(private val repository: DependencyRepository) : Depe
 	override fun deleteDependency(id: Long) {
 		repository.deleteDependency(id)
 	}
-
-	override fun getDependencyLatestVersion(id: Long): VersionDTO? = repository.getDependencyLatestVersion(id)
 }

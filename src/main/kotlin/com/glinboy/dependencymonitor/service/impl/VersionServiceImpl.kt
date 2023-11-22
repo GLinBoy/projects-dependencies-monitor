@@ -19,4 +19,6 @@ class VersionServiceImpl(val repository: VersionRepository) : VersionService {
 		repository.deleteVersion(id)
 	}
 
+	override fun getDependencyLatestVersion(id: Long): VersionDTO? = repository.getDependencyLatestVersion(id)
+
 }
