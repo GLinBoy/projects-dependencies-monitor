@@ -8,4 +8,5 @@ interface VersionService {
 	fun saveVersion(versionDTO: VersionDTO): VersionDTO?
 	fun updateVersion(versionDTO: VersionDTO): VersionDTO?
 	fun deleteVersion(id: Long)
+	fun getDependencyLatestVersion(id: Long): VersionDTO?
 }

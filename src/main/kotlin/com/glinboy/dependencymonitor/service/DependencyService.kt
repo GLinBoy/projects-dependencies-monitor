@@ -10,5 +10,4 @@ interface DependencyService {
 	fun saveDependency(dependencyDTO: DependencyDTO): DependencyDTO?
 	fun updateDependency(dependencyDTO: DependencyDTO): DependencyDTO?
 	fun deleteDependency(id: Long)
-	fun getDependencyLatestVersion(id: Long): VersionDTO?
 }
