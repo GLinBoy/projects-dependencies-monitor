@@ -6,10 +6,10 @@ import org.jooq.meta.jaxb.Logging
 import java.time.Instant
 
 plugins {
-	id("org.springframework.boot") version "3.1.5"
-	id("io.spring.dependency-management") version "1.1.3"
 	kotlin("jvm") version "1.8.22"
 	kotlin("plugin.spring") version "1.8.22"
+	id("org.springframework.boot") version "3.2.0"
+	id("io.spring.dependency-management") version "1.1.4"
 	id("org.ec4j.editorconfig") version "0.0.3"
 	id("org.flywaydb.flyway") version "9.22.3"
 	id("nu.studer.jooq") version "8.2.1"
