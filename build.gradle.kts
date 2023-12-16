@@ -31,7 +31,7 @@ repositories {
 
 val flywayMigration = configurations.create("flywayMigration")
 
-val springDocVersion = "2.2.0"
+val springDocVersion = "2.3.0"
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-actuator")
