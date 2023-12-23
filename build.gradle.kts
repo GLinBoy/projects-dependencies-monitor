@@ -8,8 +8,8 @@ import java.time.Instant
 plugins {
 	id("org.springframework.boot") version "3.2.1"
 	id("io.spring.dependency-management") version "1.1.4"
-	kotlin("jvm") version "1.9.20"
-	kotlin("plugin.spring") version "1.9.20"
+	kotlin("jvm") version "1.9.21"
+	kotlin("plugin.spring") version "1.9.21"
 	id("org.ec4j.editorconfig") version "0.0.3"
 	id("org.flywaydb.flyway") version "9.22.3"
 	id("nu.studer.jooq") version "8.2.1"
