@@ -11,7 +11,7 @@ plugins {
 	kotlin("jvm") version "1.9.21"
 	kotlin("plugin.spring") version "1.9.21"
 	id("org.ec4j.editorconfig") version "0.0.3"
-	id("org.flywaydb.flyway") version "10.4.1"
+	id("org.flywaydb.flyway") version "10.5.0"
 	id("nu.studer.jooq") version "9.0"
 	id("com.github.ben-manes.versions") version "0.50.0"
 }
