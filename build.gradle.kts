@@ -6,7 +6,7 @@ import org.jooq.meta.jaxb.Logging
 import java.time.Instant
 
 plugins {
-	id("org.springframework.boot") version "3.3.3"
+	id("org.springframework.boot") version "3.3.4"
 	id("io.spring.dependency-management") version "1.1.6"
 	kotlin("jvm") version "1.9.25"
 	kotlin("plugin.spring") version "1.9.25"
