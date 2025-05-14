@@ -11,8 +11,8 @@ plugins {
 	kotlin("jvm") version "1.9.25"
 	kotlin("plugin.spring") version "1.9.25"
 	id("org.ec4j.editorconfig") version "0.1.0"
-	id("org.flywaydb.flyway") version "11.1.0"
-	id("nu.studer.jooq") version "9.0"
+	id("org.flywaydb.flyway") version "11.8.2"
+	id("nu.studer.jooq") version "10.1"
 	id("com.github.ben-manes.versions") version "0.51.0"
 }
 
@@ -31,7 +31,7 @@ repositories {
 
 val flywayMigration = configurations.create("flywayMigration")
 
-val springDocVersion = "2.7.0"
+val springDocVersion = "2.8.8"
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-actuator")
