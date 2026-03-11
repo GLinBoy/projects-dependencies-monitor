@@ -10,9 +10,9 @@ plugins {
 	id("org.springframework.boot") version "4.0.3"
 	id("io.spring.dependency-management") version "1.1.7"
 	id("org.ec4j.editorconfig") version "0.1.0"
-	id("org.flywaydb.flyway") version "11.8.2"
-	id("nu.studer.jooq") version "10.1"
-	id("com.github.ben-manes.versions") version "0.51.0"
+	id("org.flywaydb.flyway") version "12.1.0"
+	id("nu.studer.jooq") version "10.2"
+	id("com.github.ben-manes.versions") version "0.53.0"
 }
 
 group = "com.glinboy"
@@ -32,7 +32,7 @@ repositories {
 
 val flywayMigration = configurations.create("flywayMigration")
 
-val springDocVersion = "2.8.8"
+val springDocVersion = "3.0.2"
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-h2console")
